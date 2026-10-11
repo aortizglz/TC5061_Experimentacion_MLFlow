@@ -30,7 +30,7 @@ def load_and_preprocess_data(ratings_path: str, places_path:str):
     vrange = ((df_clean["food_rating"]>=0)&(df_clean["food_rating"]<=2)&(df_clean["service_rating"]>=0)&(df_clean["service_rating"]>=0))
     df_clean = df_clean[vrange]
     #OHE
-    df_clean=pd.get_dummies(df_clean, columns=["alcohol", "dress_code", "price"], drop_firts= True)
+    df_clean=pd.get_dummies(df_clean, columns=["alcohol", "dress_code", "price"], drop_first= True)
     X=df_clean.drop(columns=[target])
     y=df_clean[target]
 
